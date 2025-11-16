@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { WidgetCollapsible } from "./WidgetCollapsible";
 import { PluginContent } from "./PluginContent";
+import { EnrollmentOverviewProps } from "./Plugin.types";
 
 const queryClient = new QueryClient();
 
-// Important - do not change this file
+// Important - make sure to not add functionality to this file, pit it on the PluginContent component instead
 
-export default function Plugin() {
+export default function Plugin({  }: EnrollmentOverviewProps) {
     const [open, setOpen] = useState(true);
 
     return (
@@ -23,6 +24,5 @@ export default function Plugin() {
                 </div>
             </WidgetCollapsible>
         </QueryClientProvider>
-        
     );
 }
